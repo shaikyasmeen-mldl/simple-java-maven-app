@@ -18,11 +18,11 @@ pipeline {
         sh 'mvn test'
       }
     }
-    stage('Test') {
-      steps {
-        sh 'mvn publish'
-      }
-    }
+    stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+            }
+        }
     
   }
 }
